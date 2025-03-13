@@ -1,3 +1,7 @@
+<?php
+session_start();
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -23,7 +27,9 @@
         $length = intval($_GET['length']);
         if ($length > 0) {
             $password = generatePassword($length);
-            echo "<p>Password generata: <strong>$password</strong></p>";
+            $_SESSION['generated_password'] = $password;
+            header('Location: result.php');
+            exit();
         } else {
             echo "<p>Per favore, inserisci una lunghezza valida.</p>";
         }
@@ -32,3 +38,6 @@
 </body>
 
 </html>
+<?php
+ob_end_flush();
+?>

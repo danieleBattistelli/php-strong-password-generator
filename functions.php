@@ -9,4 +9,3 @@ function generatePassword($length)
     }
     return $randomPassword;
 }
-?>
