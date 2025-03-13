@@ -1,12 +1,9 @@
 <?php
-function generatePassword($length, $uppercase, $lowercase, $numbers, $symbols, $allow_repeats)
+function generatePassword($length, $letters, $numbers, $symbols, $allow_repeats)
 {
     $characters = '';
-    if ($uppercase) {
-        $characters .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    }
-    if ($lowercase) {
-        $characters .= 'abcdefghijklmnopqrstuvwxyz';
+    if ($letters) {
+        $characters .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     }
     if ($numbers) {
         $characters .= '0123456789';
